@@ -1,6 +1,6 @@
 {
   "name": "barbijar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,8 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-icons": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barbijar/barbijar"
+  },
+  "bugs": {
+    "url": "https://github.com/barbijar/barbijar/issues"
   }
 }
