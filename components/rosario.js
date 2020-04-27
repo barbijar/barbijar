@@ -1,9 +1,11 @@
 import React from "react";
-import Layout from "../components/layout/layout";
 import Card from "../components/ui/card";
+
+
 import { Box, Grid, Heading } from "@chakra-ui/core";
 
 const Rosario = () => {
+
   return (
     <Box padding={3}>
       <Heading as="h2" textAlign="center" mb={3}>Rosario</Heading>
@@ -12,7 +14,7 @@ const Rosario = () => {
         gap={2}
         justifyContent="center"
       >
-        <Card price={0} />
+        <Card name="Jorgelina Flores" contact="http://jorgelinaflores.com/" price={80} delivery="Sí" area="Rosario" commerce="JFlores ~ Diseño de autor" />
         <Card />
         <Card shipment={false} />
         <Card area="Villa crespo" />

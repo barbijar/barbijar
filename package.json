@@ -1,6 +1,6 @@
 {
   "name": "barbijar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,10 +12,11 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "axios": "^0.19.2",
+    "browserslist": "^4.12.0",
     "emotion-theming": "^10.0.27",
-    "next": "9.3.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "next": "^9.3.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-icons": "^3.10.0"
   },
   "repository": {
