@@ -1,9 +1,7 @@
 import React from "react";
 import Card from "../components/ui/card";
 
-const useCommerces = (res) => {
-  const commerces = res.response.data;
-
+const useCommerces = (commerces) => {
   const Commerces = () => (
     <>
       <ul>
