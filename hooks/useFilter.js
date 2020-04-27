@@ -3,6 +3,7 @@ import axios from "axios";
 
 const useFilter = (commerces) => {
   const [provinces, setProvinces] = useState([]);
+  const [prov, setProv] = useState("");
 
   useEffect(() => {
     const getProvince = async () => {
@@ -19,11 +20,13 @@ const useFilter = (commerces) => {
   const FilterByProvince = () => (
     <>
       <form>
-        <select>
+        <select onChange={e => setProv(e.target.value)} value={prov}>
           <option>--FILTRAR POR PROVINCIA--</option>
           {Object.values(
             provinces.map((province) => (
-              <option key={province.id}>{province.province_name}</option>
+              <option key={province.id} value={province.id}>
+                {province.province_name}
+              </option>
             ))
           )}
         </select>
@@ -31,7 +34,7 @@ const useFilter = (commerces) => {
     </>
   );
 
-  return { FilterByProvince };
+  return { FilterByProvince, prov };
 };
 
 export default useFilter;

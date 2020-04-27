@@ -9,23 +9,31 @@ import { Box, Grid, PseudoBox } from "@chakra-ui/core";
 const Barbijos = () => {
   const [commerces, setCommerces] = useState([]);
   const [error, setError] = useState(null);
+  const [filteredProvince, setFilteredProvince] = useState([]);
 
-  const { Commerces } = useCommerces(commerces);
-  const { FilterByProvince} = useFilter(commerces);
+  const { Commerces } = useCommerces(filteredProvince);
+  const { FilterByProvince, prov} = useFilter(commerces);
 
   useEffect(() => {
     const getCommerces = async () => {
-      try {
-        const res = await axios.get(
-          "https://calm-brook-73441.herokuapp.com/commerce"
-        );
-        setCommerces(res.data);
-      } catch (error) {
-        setError(error);
+      if (prov) {
+        const filterProv = commerces.filter(commerce => commerce.province.id == prov);
+
+        setFilteredProvince(filterProv);
+      } else {
+        try {
+          const res = await axios.get(
+            "https://calm-brook-73441.herokuapp.com/commerce"
+          );
+          setCommerces(res.data);
+          setFilteredProvince(res.data);
+        } catch (error) {
+          setError(error);
+        }
       }
     };
     getCommerces();
-  }, []);
+  }, [prov]);
 
   return (
     <Layout>
