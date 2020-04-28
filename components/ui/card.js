@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import CardBadge from './cardBadge';
+import PriceList from './priceList';
+
 import { Box, Heading, Badge, Flex, List, ListItem } from "@chakra-ui/core";
 
 const Card = ({ commerce }) => {
@@ -28,11 +31,8 @@ const Card = ({ commerce }) => {
       <Heading size="xl">{name}</Heading>
 
       <Flex>
-        <Box className="badges">
-          <Badge marginRight="1" backgroundColor="blue.700" color="white">
-            {province.province_name}
-          </Badge>
-        </Box>
+        
+        <CardBadge badge={province.province_name} />
 
         <Box className="badges">
           <Badge marginRight="1" backgroundColor="blue.700" color="white">
@@ -40,11 +40,7 @@ const Card = ({ commerce }) => {
           </Badge>
         </Box>
 
-        <Box className="badges">
-          <Badge marginRight="1" backgroundColor="blue.700" color="white">
-            {area}
-          </Badge>
-        </Box>
+        <CardBadge badge={area} />
       </Flex>
 
       <Box>
@@ -52,23 +48,7 @@ const Card = ({ commerce }) => {
           Precios:
         </Heading>
 
-        <List>
-          $
-          {prices.map((price) => (
-            <Box key={price.id}>
-              <ListItem>Precio de barbijo: ${price.mask_price}</ListItem>
-              {price.secundary_mask_price ? (
-                <>
-                  <ListItem>
-                    Otras opciones: ${price.secundary_mask_price}
-                  </ListItem>
-                </>
-              ) : (
-                <>{null}</>
-              )}
-            </Box>
-          ))}
-        </List>
+        <PriceList prices={prices} />
       </Box>
 
       <Box>
@@ -77,7 +57,14 @@ const Card = ({ commerce }) => {
         </Heading>
 
         <List>
-          <ListItem>Teléfono: {contact.main_phone}</ListItem>
+
+          {contact.main_phone ? (
+            <>
+              <ListItem>Local: {contact.main_phone}</ListItem>
+            </>
+          ) : (
+            <>{null}</>
+          )}
 
           {commerceName ? (
             <>
