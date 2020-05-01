@@ -55,11 +55,11 @@ const Header = props => {
                   as="p"
                   display="flex"
                   alignItems="center"
-                  mt={3}
-                  pb={3}
+                  py={2}
+                  px={3}
                   borderBottom={{ sm: '1px', md: 'none' }}
                   borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400' }}
+                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
                 >
                   <Box as={MdHome} size="18px" color="white" mr={1} />
                   <Link href="/">
@@ -72,11 +72,11 @@ const Header = props => {
                   as="p"
                   display="flex"
                   alignItems="center"
-                  mt={3}
-                  pb={3}
+                  py={2}
+                  px={3}
                   borderBottom={{ sm: '1px', md: 'none' }}
                   borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400' }}
+                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
                 >
                   <Icon name="search" size="18px" color="white" mr={1} />
                   <Link href="/barbijos">
@@ -89,11 +89,11 @@ const Header = props => {
                   as="p"
                   display="flex"
                   alignItems="center"
-                  mt={3}
-                  pb={3}
+                  py={2}
+                  px={3}
                   borderBottom={{ sm: '1px', md: 'none' }}
                   borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400' }}
+                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
                 >
                   <Box as={MdContentCut} size="18px" color="white" mr={1} />
                   <Link href="/emprender">
@@ -106,11 +106,11 @@ const Header = props => {
                   as="p"
                   display="flex"
                   alignItems="center"
-                  mt={3}
-                  pb={3}
+                  py={2}
+                  px={3}
                   borderBottom={{ sm: '1px', md: 'none' }}
                   borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400' }}
+                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
                 >
                   <Box as={MdAddBox} size="18px" color="white" mr={1} />
                   <Link href="/salud">

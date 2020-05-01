@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header';
-
 import { ThemeProvider, theme, CSSReset } from '@chakra-ui/core';
+import Footer from './footer';
 
 const breakpoints = ["300px", "768px", "1024px", "1440px"];
 breakpoints.sm = breakpoints[0];
@@ -20,6 +20,7 @@ const Layout = props => (
       <CSSReset />
       <Header />
       <main>{props.children}</main>
+      <Footer />
     </ThemeProvider>
   </>
 );
