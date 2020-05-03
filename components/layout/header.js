@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Nav from '../ui/nav';
 
 import {
   Tabs,
   TabPanels,
   Flex,
   Box,
-  Icon,
   PseudoBox,
 } from '@chakra-ui/core';
 import { MdHome, MdContentCut, MdAddBox, MdMenu } from 'react-icons/md';
+
+
 
 const Header = props => {
   const [toggle, setToggle] = useState(false);
@@ -50,74 +51,11 @@ const Header = props => {
               justifyContent={{ md: 'space-around' }}
               alignItems={{ md: 'center' }}
             >
-              <Box display="block">
-                <PseudoBox
-                  as="p"
-                  display="flex"
-                  alignItems="center"
-                  py={2}
-                  px={3}
-                  borderBottom={{ sm: '1px', md: 'none' }}
-                  borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
-                >
-                  <Box as={MdHome} size="18px" color="white" mr={1} />
-                  <Link href="/">
-                      <a>Inicio</a>
-                  </Link>
-                </PseudoBox>
-              </Box>
-              <Box display="block">
-                <PseudoBox
-                  as="p"
-                  display="flex"
-                  alignItems="center"
-                  py={2}
-                  px={3}
-                  borderBottom={{ sm: '1px', md: 'none' }}
-                  borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
-                >
-                  <Icon name="search" size="18px" color="white" mr={1} />
-                  <Link href="/barbijos">
-                      <a>Barbijos</a>
-                  </Link>
-                </PseudoBox>
-              </Box>
-              <Box display="block">
-                <PseudoBox
-                  as="p"
-                  display="flex"
-                  alignItems="center"
-                  py={2}
-                  px={3}
-                  borderBottom={{ sm: '1px', md: 'none' }}
-                  borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
-                >
-                  <Box as={MdContentCut} size="18px" color="white" mr={1} />
-                  <Link href="/emprender">
-                      <a>Emprender</a>
-                  </Link>
-                </PseudoBox>
-              </Box>
-              <Box display="block">
-                <PseudoBox
-                  as="p"
-                  display="flex"
-                  alignItems="center"
-                  py={2}
-                  px={3}
-                  borderBottom={{ sm: '1px', md: 'none' }}
-                  borderBottomColor="blue.300"
-                  _hover={{ bg: 'blue.400', borderRadius: '10px',  transition: 'all ease-in-out .5s' }}
-                >
-                  <Box as={MdAddBox} size="18px" color="white" mr={1} />
-                  <Link href="/salud">
-                      <a>Salud</a>
-                  </Link>
-                </PseudoBox>
-              </Box>
+              <Nav href='/' title='Inicio' />
+              <Nav href='/barbijos' title='Barbijos' />
+              <Nav href='/emprender' title='Emprender' />
+              <Nav href='/salud' title='Salud' />
+
             </TabPanels>
           </Tabs>
         </Box>
