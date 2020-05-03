@@ -1,9 +1,9 @@
 import React from "react";
 import Link from 'next/link';
 
-import { Box, Icon, PseudoBox } from "@chakra-ui/core";
+import { Box, PseudoBox } from "@chakra-ui/core";
 
-const Nav = ({href, title}) => (
+const Nav = ({href, title, icon}) => (
   <Box display="block">
     <PseudoBox
       as="p"
@@ -19,7 +19,7 @@ const Nav = ({href, title}) => (
         transition: "background ease-in-out .3s",
       }}
     >
-      <Icon name="search" size="18px" color="white" mr={1} />
+      <Box as={icon} size="18px" color="white" mr={1} />
       <Link href={href}>
         <a>{title}</a>
       </Link>
