@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import Nav from '../ui/nav';
+import React, { useState } from "react";
+import Nav from "../ui/nav";
 
+import { Tabs, TabPanels, Flex, Box, PseudoBox } from "@chakra-ui/core";
 import {
-  Tabs,
-  TabPanels,
-  Flex,
-  Box,
-  PseudoBox,
-} from '@chakra-ui/core';
-import { MdHome, MdContentCut, MdAddBox, MdMenu } from 'react-icons/md';
+  MdHome,
+  MdContentCut,
+  MdAddBox,
+  MdMenu,
+  MdSearch,
+} from "react-icons/md";
 
-
-
-const Header = props => {
+const Header = (props) => {
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => setToggle(!toggle);
@@ -31,15 +29,15 @@ const Header = props => {
       >
         <PseudoBox
           as="div"
-          display={{ sm: 'block', md: 'none' }}
+          display={{ sm: "block", md: "none" }}
           onClick={handleToggle}
         >
           <Box as={MdMenu} size="18px" color="white" mr={1} />
         </PseudoBox>
 
         <Box
-          display={{ sm: toggle ? 'block' : 'none', md: 'flex' }}
-          width={{ sm: 'full', md: 'auto' }}
+          display={{ sm: toggle ? "block" : "none", md: "flex" }}
+          width={{ sm: "full", md: "auto" }}
           alignItems="center"
           flexGrow={1}
         >
@@ -47,15 +45,14 @@ const Header = props => {
             <TabPanels
               display="flex"
               width="100%"
-              flexDirection={{ sm: 'column', md: 'row' }}
-              justifyContent={{ md: 'space-around' }}
-              alignItems={{ md: 'center' }}
+              flexDirection={{ sm: "column", md: "row" }}
+              justifyContent={{ md: "space-around" }}
+              alignItems={{ md: "center" }}
             >
-              <Nav href='/' title='Inicio' />
-              <Nav href='/barbijos' title='Barbijos' />
-              <Nav href='/emprender' title='Emprender' />
-              <Nav href='/salud' title='Salud' />
-
+              <Nav href="/" title="Inicio" icon={MdHome} />
+              <Nav href="/barbijos" title="Barbijos" icon={MdSearch} />
+              <Nav href="/emprender" title="Emprender" icon={MdContentCut} />
+              <Nav href="/salud" title="Salud" icon={MdAddBox} />
             </TabPanels>
           </Tabs>
         </Box>
