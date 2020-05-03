@@ -1,6 +1,8 @@
 import React from "react";
-import CardBadge from './cardBadge';
-import PriceList from './priceList';
+import CardBadge from "./cardBadge";
+import PriceList from "./priceList";
+import Contact from "./contact";
+import Loading from "./loading";
 
 import { Box, Heading, Badge, Flex, List, ListItem } from "@chakra-ui/core";
 
@@ -19,6 +21,19 @@ const Card = ({ commerce }) => {
     prices,
   } = commerce;
 
+  const showCommerces = commerce ? (
+    <Contact
+      phone={contact.main_phone}
+      commerceName={commerceName}
+      commerceAddress={commerceAddress}
+      instagram={instagram}
+      facebook={facebook}
+      web={web}
+    />
+  ) : (
+    null
+  );
+  
   return (
     <Box
       rounded="md"
@@ -31,7 +46,6 @@ const Card = ({ commerce }) => {
       <Heading size="xl">{name}</Heading>
 
       <Flex>
-        
         <CardBadge badge={province.province_name} />
 
         <Box className="badges">
@@ -56,56 +70,7 @@ const Card = ({ commerce }) => {
           Información de contacto:
         </Heading>
 
-        <List>
-
-          {contact.main_phone ? (
-            <>
-              <ListItem>Local: {contact.main_phone}</ListItem>
-            </>
-          ) : (
-            <>{null}</>
-          )}
-
-          {commerceName ? (
-            <>
-              <ListItem>Local: {commerceName}</ListItem>
-            </>
-          ) : (
-            <>{null}</>
-          )}
-
-          {commerceAddress ? (
-            <>
-              <ListItem>Dirección: {commerceAddress}</ListItem>
-            </>
-          ) : (
-            <>{null}</>
-          )}
-
-          {instagram ? (
-            <>
-              <ListItem>Instagram: {instagram}</ListItem>
-            </>
-          ) : (
-            <>{null}</>
-          )}
-
-          {facebook ? (
-            <>
-              <ListItem>Facebook: {facebook}</ListItem>
-            </>
-          ) : (
-            <>{null}</>
-          )}
-
-          {web ? (
-            <>
-              <ListItem>Sitio web: {web}</ListItem>
-            </>
-          ) : (
-            <>{null}</>
-          )}
-        </List>
+        {showCommerces}
       </Box>
     </Box>
   );
