@@ -17,7 +17,15 @@ function Welcome() {
             facilidad posible.
           </Text>
 
-          <Button color="blue.300" variantColor="blue" variant="outline" align="center" width="100%" mt={3}>
+          <Button color="blue.300" 
+          variantColor="blue" 
+          variant="outline"
+          display="flex" 
+          align="center" 
+          width={{base: '100%', md: '50%', lg: '30%'}} 
+          mt={3}
+          mx="auto"
+          >
               <Link href="/barbijos">
                 <Text textTransform="uppercase">
                   <a>Buscar barbijos</a>
