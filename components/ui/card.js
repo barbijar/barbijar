@@ -2,9 +2,8 @@ import React from "react";
 import CardBadge from "./cardBadge";
 import PriceList from "./priceList";
 import Contact from "./contact";
-import Loading from "./loading";
 
-import { Box, Heading, Badge, Flex, List, ListItem } from "@chakra-ui/core";
+import { Box, Heading, Badge, Flex } from "@chakra-ui/core";
 
 const Card = ({ commerce }) => {
   const {
@@ -33,7 +32,7 @@ const Card = ({ commerce }) => {
   ) : (
     null
   );
-  
+
   return (
     <Box
       rounded="md"
