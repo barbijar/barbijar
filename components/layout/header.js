@@ -27,6 +27,8 @@ const Header = (props) => {
         color="blue.50"
         {...props}
       >
+        
+        <Image width="200px"  src={'./logo.png'} alt="Logo Barbijar" display={{base: 'none', md:'block'}} />
         <PseudoBox
           as="div"
           display={{ sm: "block", md: "none" }}
