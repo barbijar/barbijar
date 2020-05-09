@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "../components/layout/layout";
-import Welcome from "../components/ui/welcome";
+import Landing from "../components/ui/landing";
+import { MdContentCut } from "react-icons/md";
 
 const Emprender = () => (
   <Layout>
-    <Welcome />
+    <Landing title="Emprender" desc="Descripción Emprender" icon={MdContentCut} href="/emprender" hrefValue="Emprender" />
   </Layout>
 );
 
