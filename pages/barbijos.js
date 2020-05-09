@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Layout from "../components/layout/layout";
 import useCommerces from "../hooks/useCommerces";
 import useFilter from "../hooks/useFilter";
@@ -45,7 +45,8 @@ const Barbijos = () => {
     getCommerces();
   }, [prov]);
 
-  const showCommerces = isLoading ? <Loading /> : <Commerces />;
+  // * We can implement Suspense to down the data request until 300ms -> <Commerces /> 
+  const showCommerces = isLoading ? <Loading /> : <Commerces />
 
   return (
     <Layout>

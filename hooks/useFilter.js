@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FormControl, FormLabel, Select } from '@chakra-ui/core';
 
 const useFilter = (commerces) => {
   const [provinces, setProvinces] = useState([]);
@@ -19,9 +20,9 @@ const useFilter = (commerces) => {
 
   const FilterByProvince = () => (
     <>
-      <form>
-        <select onChange={e => setProv(e.target.value)} value={prov}>
-          <option>--FILTRAR POR PROVINCIA--</option>
+      <FormControl m="0 auto" width={{sm: '18rem', md: '40rem'}}>
+        <FormLabel htmlFor="Provincias">Provincias</FormLabel>
+        <Select onChange={e => setProv(e.target.value)} value={prov} placeholder="Filtrar provincia">
           {Object.values(
             provinces.map((province) => (
               <option key={province.id} value={province.id}>
@@ -29,8 +30,8 @@ const useFilter = (commerces) => {
               </option>
             ))
           )}
-        </select>
-      </form>
+        </Select>
+      </FormControl>
     </>
   );
 
