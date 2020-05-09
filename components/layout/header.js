@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Nav from "../ui/nav";
 
-import { Tabs, TabPanels, Flex, Box, PseudoBox } from "@chakra-ui/core";
+import { Tabs, TabPanels, Flex, Box, PseudoBox, Image } from "@chakra-ui/core";
 import {
   MdHome,
   MdContentCut,
@@ -27,6 +27,10 @@ const Header = (props) => {
         color="blue.50"
         {...props}
       >
+        <Box flex="0 0 50%" display={{ sm: "none", md: "block" }}>
+          <Image width="200px" src={"./logo.png"} alt="Logo Barbijar" />
+        </Box>
+
         <PseudoBox
           as="div"
           display={{ sm: "block", md: "none" }}
