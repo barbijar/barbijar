@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <Layout>
       <Welcome />
-      <Welcome />
     </Layout>
   );
 }

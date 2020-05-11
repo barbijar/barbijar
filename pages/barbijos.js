@@ -1,11 +1,11 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout/layout";
 import useCommerces from "../hooks/useCommerces";
 import useFilter from "../hooks/useFilter";
 import Loading from "../components/ui/loading";
 
 import axios from "axios";
-import { Box, Grid, PseudoBox } from "@chakra-ui/core";
+import { PseudoBox } from "@chakra-ui/core";
 
 const Barbijos = () => {
   const [commerces, setCommerces] = useState([]);
@@ -37,16 +37,16 @@ const Barbijos = () => {
             setCommerces(res.data);
             setFilteredProvince(res.data);
           }, 3000);
-        } catch (error) {
-          setError(error);
+        } catch (err) {
+          console.log(err);
+          setError(err);
         }
       }
     };
     getCommerces();
   }, [prov]);
 
-  // * We can implement Suspense to down the data request until 300ms -> <Commerces /> 
-  const showCommerces = isLoading ? <Loading /> : <Commerces />
+  const showCommerces = isLoading ? <Loading /> : <Commerces />;
 
   return (
     <Layout>
