@@ -39,8 +39,7 @@ const Card = ({ commerce }) => {
       p={2}
       shadow="md"
       backgroundColor="#ecf0f1"
-      width="350px"
-      m="1rem auto"
+      width="100%"
     >
       <Heading size="xl">{name}</Heading>
 
