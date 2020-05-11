@@ -1,16 +1,41 @@
 import React from "react";
 import Layout from "../components/layout/layout";
 import Landing from "../components/ui/landing";
-import { MdHome, MdContentCut, MdAddBox, MdMenu, MdSearch } from 'react-icons/md';
+
+import { Box } from "@chakra-ui/core";
+import { MdHome, MdContentCut, MdAddBox, MdSearch } from "react-icons/md";
 export default function Home() {
   return (
     <Layout>
-      <Landing title="¡Bienvenides a BarbijAr!" desc="BarbijAr es un proyecto para que los argentinos y argentinas tengan
+      <Box>
+        <Landing
+          title="¡Bienvenides a BarbijAr!"
+          desc="BarbijAr es un proyecto para que los argentinos y argentinas tengan
             la posibilidad de solicitar su barbijo obligatorio con la mayor
-            facilidad posible." icon={MdSearch} href="/barbijos" hrefValue="Buscar barbijos" />
-      <Landing title="Barbijos" desc="Descripción barbijos" icon={MdHome} href="/" hrefValue="Inicio" />
-      <Landing title="Emprender" desc="Descripción Emprender" icon={MdContentCut} href="/emprender" hrefValue="Emprender" />
-      <Landing title="Salud" desc="Descripción Salud" icon={MdAddBox} href="/salud" hrefValue="salud" />
+            facilidad posible."
+          icon={MdSearch}
+          href="/barbijos"
+          hrefValue="Buscar barbijos"
+        />
+      </Box>
+      <Box bg="blue.700" color="white">
+        <Landing
+          title="Emprender"
+          desc="Descripción Emprender"
+          icon={MdContentCut}
+          href="/emprender"
+          hrefValue="Emprender"
+        />
+      </Box>
+      <Box>
+        <Landing
+          title="Salud"
+          desc="Descripción Salud"
+          icon={MdAddBox}
+          href="/salud"
+          hrefValue="salud"
+        />
+      </Box>
     </Layout>
   );
 }
