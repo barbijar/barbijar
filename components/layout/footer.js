@@ -7,10 +7,9 @@ const Footer = () => {
 
   return (
     <Box
-      position="absolute"
-      bottom="0"
+      position={{sm: "none", xl: "absolute"}}
+      bottom={{xl: "0"}}
       width="100%"
-      display={{ sm: "none", md: "none", lg: "block" }}
     >
       <Flex justifyContent="center" p="1.5rem" bg="blue.700" color="blue.50">
         <Text>Hecho con &hearts; por el equipo de BarbijAr © {year}</Text>
