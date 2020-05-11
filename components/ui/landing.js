@@ -2,19 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Box, Heading, Text, Flex, Button, Icon } from '@chakra-ui/core';
-
-function Welcome() {
+function Landing({title, desc, icon, href, hrefValue}) {
   return (
     <>
       <Flex align="center" justify="center" height="100vh">
-        <Box p={4}>
+        <Box p={4} width="100%">
           <Heading mb={3} textAlign="center" color="blue.300">
-            ¡Bienvenides a BarbijAr!
+            {title}
           </Heading>
           <Text fontSize="xl" textAlign="center">
-            BarbijAr es un proyecto para que los argentinos y argentinas tengan
-            la posibilidad de solicitar su barbijo obligatorio con la mayor
-            facilidad posible.
+            {desc}
           </Text>
 
           <Button color="blue.300" 
@@ -26,12 +23,14 @@ function Welcome() {
           mt={3}
           mx="auto"
           >
-              <Link href="/barbijos">
+              <Box display="flex">
+              <Link href={href}>
                 <Text textTransform="uppercase">
-                  <a>Buscar barbijos</a>
+                  <a>{hrefValue}</a>
                 </Text>
               </Link>
-              <Icon name="search" ml={3} />
+              <Box as={icon} size="18px" color="blue.300" ml={2} />
+              </Box>
           </Button>
         </Box>
       </Flex>
@@ -39,4 +38,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Landing;
